@@ -1,7 +1,7 @@
 #include "testdriven.h"
 #include <string.h>
 
-const char* classifyPetAge(int age) {
+const char* classifyPetAge(int age, int isVaccinated) {
     if (age < 0) {
         return "Invalid";
     }
@@ -19,7 +19,7 @@ const char* classifyPetAge(int age) {
     }
 }
 
-const char* matchPet(const char* lifestyle) {
+const char* matchPet(const char* lifestyle, int hasAllergies) {
     if (lifestyle == NULL || strlen(lifestyle) == 0) {
         return "Unknown";
     }
@@ -40,5 +40,29 @@ const char* matchPet(const char* lifestyle) {
     }
     else {
         return "Unknown";
+    }
+}
+
+
+
+int calculatePetCareCost(int foodCost, int vetCost, int groomingCost) {
+    if (foodCost < 0 || vetCost < 0 || groomingCost < 0) {
+        return -1;
+    }
+    return foodCost + vetCost + groomingCost;
+}
+
+const char* recommendAdoptionPlan(int age, const char* lifestyle, int budget) {
+    if (age < 0 || lifestyle == NULL || budget < 0) {
+        return "Invalid";
+    }
+    else if (budget < 100) {
+        return "Basic";
+    }
+    else if (age > 7) {
+        return "Senior Care";
+    }
+    else {
+        return "Standard";
     }
 }
