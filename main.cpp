@@ -1,10 +1,4 @@
-// Mauricio's code
-
-#include <iostream>
-using namespace std;
-
-// Function 1: Adoption Fee Calculator
-int calculateFee(int age, bool vaccinated, bool specialNeeds) {
+int calculateFee(int age, int vaccinated, int specialNeeds) {
     int fee;
 
     if (age < 2) {
@@ -26,46 +20,14 @@ int calculateFee(int age, bool vaccinated, bool specialNeeds) {
     return fee;
 }
 
-// Function 2: Apartment Suitability Check
-bool isApartmentSuitable(string size, string energy) {
-    if (size == "small" && (energy == "low" || energy == "medium")) {
-        return true;
+int isApartmentSuitable(const char* size, const char* energy) {
+    if (strcmp(size, "small") == 0 && 
+       (strcmp(energy, "low") == 0 || strcmp(energy, "medium") == 0)) {
+        return 1;
     }
-    if (size == "medium" && energy == "low") {
-        return true;
-    }
-    return false;
-}
 
-int main() {
-    int age;
-    bool vaccinated, specialNeeds;
-    string size, energy;
-
-    cout << "Enter pet age: ";
-    cin >> age;
-
-    cout << "Is vaccinated? (1 = yes, 0 = no): ";
-    cin >> vaccinated;
-
-    cout << "Special needs? (1 = yes, 0 = no): ";
-    cin >> specialNeeds;
-
-    cout << "Enter size (small, medium, large): ";
-    cin >> size;
-
-    cout << "Enter energy (low, medium, high): ";
-    cin >> energy;
-
-    int fee = calculateFee(age, vaccinated, specialNeeds);
-    bool suitable = isApartmentSuitable(size, energy);
-
-    cout << "\nAdoption Fee: $" << fee << endl;
-
-    if (suitable) {
-        cout << "Good for apartment: YES" << endl;
-    } else {
-        cout << "Good for apartment: NO" << endl;
+    if (strcmp(size, "medium") == 0 && strcmp(energy, "low") == 0) {
+        return 1;
     }
 
     return 0;
