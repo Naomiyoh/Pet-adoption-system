@@ -3,6 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="../../../../Desktop/Pet-adoption-system-main (6)/Pet-adoption-system-main/UnitTest.vcxproj" Id="1723fd3c-92bd-e27e-67a3-92babfb90e1a" />
   <Project Path="TestDriven.vcxproj" Id="1c2c41a3-f873-421b-80c2-c9ee5f69f16b" />
-  <Project Path="UnitTest/UnitTest.vcxproj" />
 </Solution>
